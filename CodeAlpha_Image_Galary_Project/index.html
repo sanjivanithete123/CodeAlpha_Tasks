@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Interactive Image Gallery</h1>
+
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch">
+            <input type="checkbox" onclick="toggleTheme()">
+            <span class="slider"></span>
+        </label>
+        <span class="theme-label">Dark Mode</span>
+    </div>
+
+    <div class="filter-buttons">
+        <button class="btn active" onclick="filterSelection('all')">Show all</button>
+        <button class="btn" onclick="filterSelection('nature')">Nature</button>
+        <button class="btn" onclick="filterSelection('city')">City</button>
+        <button class="btn" onclick="filterSelection('animals')">Animals</button>
+        <button class="btn" onclick="filterSelection('birds')">Birds</button>
+        <button class="btn" onclick="filterSelection('fruits')">Fruits</button>
+        <button class="btn" onclick="filterSelection('flowers')">Flowers</button>
+    </div>
+
+    <div class="gallery-grid">
+
+        <!-- Nature -->
+        <div class="gallery-item nature">
+            <img src="nature.jpg" alt="Mountain Lake" onclick="openLightbox();currentSlide(1)">
+        </div>
+        <div class="gallery-item nature">
+            <img src="forest.webp" alt="Forest Trail" onclick="openLightbox();currentSlide(2)">
+        </div>
+        <div class="gallery-item nature">
+            <img src="river.jpeg" alt="River" onclick="openLightbox();currentSlide(3)">
+        </div>
+        <div class="gallery-item nature">
+            <img src="tree.jpg" alt="Trees" onclick="openLightbox();currentSlide(4)">
+        </div>
+        
+
+        <!-- City -->
+        <div class="gallery-item city">
+            <img src="city.avif" alt="City View" onclick="openLightbox();currentSlide(5)">
+        </div>
+        <div class="gallery-item city">
+            <img src="city-skysc..webp" alt="City Skyscrapers" onclick="openLightbox();currentSlide(6)">
+        </div>
+         <div class="gallery-item city">
+            <img src="relax.webp" alt="Relaxing in the city" onclick="openLightbox();currentSlide(7)">
+        </div>
+        <div class="gallery-item city">
+            <img src="workplace.jpg" alt="Workplace" onclick="openLightbox();currentSlide(8)">
+        </div>
+
+        <!-- Animals -->
+        <div class="gallery-item animals">
+            <img src="https://picsum.photos/id/237/600/400" alt="Puppy" onclick="openLightbox();currentSlide(9)">
+        </div>
+        <div class="gallery-item animals">
+            <img src="https://picsum.photos/id/1062/600/400" alt="Dog" onclick="openLightbox();currentSlide(10)">
+        </div>
+        <div class="gallery-item animals">
+            <img src="tiger.webp" alt="Tiger" onclick="openLightbox();currentSlide(11)">
+        </div>
+        <div class="gallery-item animals">
+            <img src="elephant.webp" alt="Elephant" onclick="openLightbox();currentSlide(12)">
+        </div>
+
+        <!-- Birds -->
+        <div class="gallery-item birds">
+            <img src="pigeon.webp" alt="Pigeon" onclick="openLightbox();currentSlide(13)">
+        </div>
+        <div class="gallery-item birds">
+            <img src="peacock.webp" alt="Peacock" onclick="openLightbox();currentSlide(14)">
+        </div>
+        <div class="gallery-item birds">
+            <img src="parrot.jpg" alt="Parrot" onclick="openLightbox();currentSlide(15)">
+        </div>
+         <div class="gallery-item birds">
+            <img src="ssparrow.webp" alt="Sparrow" onclick="openLightbox();currentSlide(16)">
+        </div>
+
+        <!-- Fruits -->
+        <div class="gallery-item fruits">
+            <img src="mango.jpeg" alt="Mangoes" onclick="openLightbox();currentSlide(17)">
+        </div>
+        <div class="gallery-item fruits">
+            <img src="apple.jpg" alt="Apples" onclick="openLightbox();currentSlide(18)">
+        </div>
+        <div class="gallery-item fruits">
+            <img src="grape.jpg" alt="Grapes" onclick="openLightbox();currentSlide(19)">
+        </div>
+        <div class="gallery-item fruits">
+            <img src="strawberry.webp" alt="Strawberry" onclick="openLightbox();currentSlide(20)">
+        </div>
+
+        <!-- Flowers -->
+        <div class="gallery-item flowers">
+            <img src="rose.webp" alt="Rose" onclick="openLightbox();currentSlide(21)">
+        </div>
+        <div class="gallery-item flowers">
+            <img src="sunflower.jpg" alt="Sunflower" onclick="openLightbox();currentSlide(22)">
+        </div>
+        <div class="gallery-item flowers">
+            <img src="mogra.jpg" alt="Mogra" onclick="openLightbox();currentSlide(23)">
+        </div>
+        <div class="gallery-item flowers">
+            <img src="lavender.jpg" alt="Lavender" onclick="openLightbox();currentSlide(24)">
+        </div>
+
+    </div>
+</div>
+
+<!-- Lightbox -->
+<div id="myLightbox" class="modal">
+    <span class="close cursor" onclick="closeLightbox()">&times;</span>
+
+    <div class="modal-content">
+
+        <div class="mySlides"><img src="nature.jpg"></div>
+        <div class="mySlides"><img src="forest.webp"></div>
+        <div class="mySlides"><img src="river.jpeg"></div>
+        <div class="mySlides"><img src="tree.jpg"></div>
+        <div class="mySlides"><img src="city.avif"></div>
+        <div class="mySlides"><img src="city-skysc..webp"></div>
+        <div class="mySlides"><img src="relax.webp"></div>
+        <div class="mySlides"><img src="workplace.jpg"></div>
+        <div class="mySlides"><img src="https://picsum.photos/id/237/1200/800"></div>
+        <div class="mySlides"><img src="https://picsum.photos/id/1062/1200/800"></div>
+        <div class="mySlides"><img src="tiger.webp"></div>
+        <div class="mySlides"><img src="elephant.webp"></div>
+        <div class="mySlides"><img src="pigeon.webp"></div>
+        <div class="mySlides"><img src="peacock.webp"></div>
+        <div class="mySlides"><img src="parrot.jpg"></div>
+        <div class="mySlides"><img src="ssparrow.webp"></div>
+        <div class="mySlides"><img src="mango.jpeg"></div>
+        <div class="mySlides"><img src="apple.jpg"></div>
+        <div class="mySlides"><img src="grape.jpg"></div>
+         <div class="mySlides"><img src="strawberry.webp"></div>
+        <div class="mySlides"><img src="rose.webp"></div>
+        <div class="mySlides"><img src="sunflower.jpg"></div>
+        <div class="mySlides"><img src="mogra.jpg"></div>
+        <div class="mySlides"><img src="lavender.jpg"></div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
